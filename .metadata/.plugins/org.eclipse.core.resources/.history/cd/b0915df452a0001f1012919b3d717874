@@ -1,0 +1,60 @@
+package cafe_luck;
+
+import java.awt.EventQueue;
+
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class main_cafe extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField nameField;
+	private JComboBox<String> firstDishCombo, secondDishCombo, drinkCombo;
+	private JRadioButton regularCustomerRadio;
+	private JTextArea resultArea;
+
+	private String[] firstDishes = {"Салат Цезарь", "Борщ", "Суп с фрикадельками"};
+	private String[] secondDishes = {"Паста", "Пельмени", "Стейк"};
+	private String[] drinks = {"Кофе", "Чай", "Сок"};
+	private double[] firstDishPrices = {500, 400, 350};
+	private double[] secondDishPrices = {800, 600, 120};
+	private double[] drinkPrices = {250, 150, 300};
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					main_cafe frame = new main_cafe();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public main_cafe() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+	}
+
+}
